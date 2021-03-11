@@ -1,19 +1,68 @@
 <template>
   <div class="countdown">
-    <span>0</span>
-    <span>5</span>
+    <span>{{ minuteLeft }}</span>
+    <span>{{ minuteRight }}</span>
     <span>:</span>
-    <span>0</span>
-    <span>0</span>
+    <span>{{ secondLeft }}</span>
+    <span>{{ secondRight }}</span>
 
     <div class="countdown-button">
-      <button>Iniciar</button>
+      <button v-on:click="startCountdown()">Iniciar</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+let time = 0.2 * 60;
+let minute = null;
+let seconds = null;
+
+let isActive = false;
+
+let [minuteLeft, minuteRight] = [0, 5];
+let [secondLeft, secondRight] = [0, 0];
+
+let idSetTime;
+
+export default {
+  methods: {
+    startCountdown: function () {
+      isActive = true;
+      console.log(time);
+      idSetTime = setInterval(() => {
+        time = time - 1;
+        minute = Math.floor(time / 60);
+        seconds = time % 60;
+        [minuteLeft, minuteRight] = String(minute).padStart(2, "0").split("");
+        [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
+        this.minuteLeft = minuteLeft;
+        this.minuteRight = minuteRight;
+        this.secondLeft = secondLeft;
+        this.secondRight = secondRight;
+        console.log(time);
+        console.log(
+          minuteLeft + minuteRight + " : " + secondLeft + secondRight
+        );
+        if (time === 0) {
+          clearInterval(idSetTime);
+          console.log("Acabou o tempo.");
+        }
+      }, 1000);
+    },
+  },
+  data: function () {
+    return {
+      minute,
+      seconds,
+      minuteLeft,
+      minuteRight,
+      secondLeft,
+      secondRight,
+      isActive,
+      idSetTime,
+    };
+  },
+};
 </script>
 
 <style>

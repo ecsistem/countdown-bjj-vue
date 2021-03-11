@@ -26,6 +26,7 @@ export default {
   margin: 0;
   padding: 0;
   border-bottom: 0;
+  overflow: hidden;
 }
 
 #app {
@@ -34,9 +35,10 @@ export default {
 }
 
 .container {
-  height: 100vh;
   display: grid;
+  height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
+  padding: 5px;
 }
 </style>
