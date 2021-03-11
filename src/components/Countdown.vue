@@ -7,13 +7,14 @@
     <span>{{ secondRight }}</span>
 
     <div class="countdown-button">
-      <button v-on:click="startCountdown()">Iniciar</button>
+      <button v-on:click="startCountdown()" v-if="!isActive">Iniciar</button>
+      <button v-on:click="startCountdown()" v-else>Pausar</button>
     </div>
   </div>
 </template>
 
 <script>
-let time = 0.2 * 60;
+let time = 5 * 60;
 let minute = null;
 let seconds = null;
 
@@ -27,7 +28,7 @@ let idSetTime;
 export default {
   methods: {
     startCountdown: function () {
-      isActive = true;
+      this.isActive = true;
       console.log(time);
       idSetTime = setInterval(() => {
         time = time - 1;
@@ -39,12 +40,13 @@ export default {
         this.minuteRight = minuteRight;
         this.secondLeft = secondLeft;
         this.secondRight = secondRight;
-        console.log(time);
         console.log(
           minuteLeft + minuteRight + " : " + secondLeft + secondRight
         );
         if (time === 0) {
           clearInterval(idSetTime);
+          this.isActive = false;
+          time = 5 * 60;
           console.log("Acabou o tempo.");
         }
       }, 1000);
@@ -52,13 +54,13 @@ export default {
   },
   data: function () {
     return {
+      isActive,
       minute,
       seconds,
       minuteLeft,
       minuteRight,
       secondLeft,
       secondRight,
-      isActive,
       idSetTime,
     };
   },
