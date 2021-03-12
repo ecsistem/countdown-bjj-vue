@@ -11,9 +11,22 @@ Feito o design, fui codar, então utilizando Vue Js para desenvolver esse projet
 <h4 align="center"> 
 	🚧  Vue Project Countdown 🚀 Em construção...  🚧	
 </h4>
-<p>Como está ficando . . . </p>
+<p>Como está ficando . . .</p>
 
 ![countdown-gif](https://user-images.githubusercontent.com/26436413/110866194-23607d80-829b-11eb-8122-7929ee398bc4.gif)
+
+<p>Finalizado v1 do projeto :tada:</p>
+
+![v1countdown](https://user-images.githubusercontent.com/26436413/110982837-66742c80-833f-11eb-87a1-3e2df4fef208.gif)
+
+Até o momento:
+* Botão Iniciar startando o countdown
+* Botão Iniciar troca para Botão Pausar quando o Countdown é inciado
+* Botao Pausar volta para iniciar ao countdown zerar
+* Countdown diminuindo a cada segundo até zerar
+* Botões de Pontuação adicionando pontos ao respectivos Contadores de acordo com o seu valor que representado
+
+Caso queira contribuir, vou deixar aqui o link para as features restantes desse projeto: [Acessar Issues](https://github.com/thiagodau/countdown-bjj-vue/issues)
 
 # Para rodar o projeto
 
