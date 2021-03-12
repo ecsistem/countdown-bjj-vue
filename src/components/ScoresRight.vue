@@ -1,6 +1,6 @@
 <template>
   <div class="scores">
-    <span>0</span>
+    <span>{{ quantidadePunicao }}</span>
     <span>{{ pontoVantagemRight }}</span>
     <span>0</span>
     <p>P</p>
@@ -13,6 +13,7 @@
 export default {
   props: {
     pontoVantagemRight: Number,
+    quantidadePunicao: Number,
   },
 };
 </script>

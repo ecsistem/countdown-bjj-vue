@@ -2,8 +2,14 @@
   <div class="marker">
     <h1>Lutador 2</h1>
     <div style="border: 10px solid #e83f5b; margin-bottom: 10px"></div>
-    <ScoresRight :pontoVantagemRight="pontuacao" />
-    <ButtonsRight @pontuarVantagem="pegaValorVantagem" />
+    <ScoresRight
+      :pontoVantagemRight="pontuacao"
+      :quantidadePunicao="pontuacaoPunicao"
+    />
+    <ButtonsRight
+      @pontuarVantagem="pegaValorVantagem"
+      @pontuarPunicao="pegaValorPunicao"
+    />
   </div>
 </template>
 
@@ -16,10 +22,14 @@ export default {
     pegaValorVantagem(valor) {
       this.pontuacao = this.pontuacao + valor;
     },
+    pegaValorPunicao(valor) {
+      this.pontuacaoPunicao = this.pontuacaoPunicao - valor;
+    },
   },
   data() {
     return {
       pontuacao: 0,
+      pontuacaoPunicao: 0,
     };
   },
   components: {
