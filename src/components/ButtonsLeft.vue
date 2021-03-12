@@ -4,7 +4,9 @@
       <button>Pontuar +2</button>
       <button>Pontuar +3</button>
       <button>Pontuar +4</button>
-      <button style="background: #49b8aa">Vantagem +1</button>
+      <button @click="pontuarVantagem(1)" style="background: #49b8aa">
+        Vantagem +1
+      </button>
       <button style="background: #e83f5b">Punição -1</button>
     </div>
     <div class="button-reset">
@@ -18,7 +20,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    pontuarVantagem(valor) {
+      this.$emit("pontuarVantagem", valor);
+    },
+  },
+};
 </script>
 
 <style>

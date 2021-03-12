@@ -1,7 +1,7 @@
 <template>
   <div class="scores">
     <span>0</span>
-    <span>0</span>
+    <span>{{ pontoVantagemLeft }}</span>
     <span>0</span>
     <p>P</p>
     <p>V</p>
@@ -10,7 +10,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    pontoVantagemLeft: Number,
+  },
+};
 </script>
 
 <style>

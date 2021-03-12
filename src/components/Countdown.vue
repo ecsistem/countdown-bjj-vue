@@ -14,14 +14,14 @@
 </template>
 
 <script>
-let time = 5 * 60;
+let time = 0.1 * 60;
 let minute = null;
 let seconds = null;
 
 let isActive = false;
 
-let [minuteLeft, minuteRight] = [0, 5];
-let [secondLeft, secondRight] = [0, 0];
+let [minuteLeft, minuteRight] = [0, 0];
+let [secondLeft, secondRight] = [0, 6];
 
 let idSetTime;
 
@@ -46,7 +46,7 @@ export default {
         if (time === 0) {
           clearInterval(idSetTime);
           this.isActive = false;
-          time = 5 * 60;
+          time = 0.1 * 60;
           console.log("Acabou o tempo.");
         }
       }, 1000);
