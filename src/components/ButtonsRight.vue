@@ -1,9 +1,9 @@
 <template>
   <div class="buttons">
     <div class="button-points">
-      <button>Pontuar +2</button>
-      <button>Pontuar +3</button>
-      <button>Pontuar +4</button>
+      <button @click="pontuar(2)">Pontuar +2</button>
+      <button @click="pontuar(3)">Pontuar +3</button>
+      <button @click="pontuar(4)">Pontuar +4</button>
       <button @click="pontuarVantagem(1)" style="background: #49b8aa">
         Vantagem +1
       </button>
@@ -24,6 +24,9 @@
 <script>
 export default {
   methods: {
+    pontuar(quantidadePontos) {
+      this.$emit("pontuar", quantidadePontos);
+    },
     pontuarVantagem(valor) {
       this.$emit("pontuarVantagem", valor);
     },

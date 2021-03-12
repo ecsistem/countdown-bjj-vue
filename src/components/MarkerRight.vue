@@ -3,12 +3,14 @@
     <h1>Lutador 2</h1>
     <div style="border: 10px solid #e83f5b; margin-bottom: 10px"></div>
     <ScoresRight
-      :pontoVantagemRight="pontuacao"
+      :pontoVantagemRight="pontuacaoVantagem"
       :quantidadePunicao="pontuacaoPunicao"
+      :pontos="pontuacao"
     />
     <ButtonsRight
       @pontuarVantagem="pegaValorVantagem"
       @pontuarPunicao="pegaValorPunicao"
+      @pontuar="pegaValorPontos"
     />
   </div>
 </template>
@@ -19,8 +21,11 @@ import ButtonsRight from "./ButtonsRight";
 
 export default {
   methods: {
-    pegaValorVantagem(valor) {
+    pegaValorPontos(valor) {
       this.pontuacao = this.pontuacao + valor;
+    },
+    pegaValorVantagem(valor) {
+      this.pontuacaoVantagem = this.pontuacaoVantagem + valor;
     },
     pegaValorPunicao(valor) {
       this.pontuacaoPunicao = this.pontuacaoPunicao - valor;
@@ -28,8 +33,9 @@ export default {
   },
   data() {
     return {
-      pontuacao: 0,
+      pontuacaoVantagem: 0,
       pontuacaoPunicao: 0,
+      pontuacao: 0,
     };
   },
   components: {

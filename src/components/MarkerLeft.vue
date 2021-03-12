@@ -4,12 +4,14 @@
     <div style="border: 10px solid #5965e0; margin-bottom: 10px"></div>
 
     <ScoresLeft
-      :pontoVantagemLeft="pontuacao"
+      :pontoVantagemLeft="pontuacaoVantagem"
       :quantidadePunicao="pontuacaoPunicao"
+      :pontos="pontuacao"
     />
     <ButtonsLeft
       @pontuarVantagem="pegaValorVantagem"
       @pontuarPunicao="pegaValorPunicao"
+      @pontuar="pegaValorPontos"
     />
   </div>
 </template>
@@ -20,8 +22,11 @@ import ButtonsLeft from "./ButtonsLeft";
 
 export default {
   methods: {
-    pegaValorVantagem(valor) {
+    pegaValorPontos(valor) {
       this.pontuacao = this.pontuacao + valor;
+    },
+    pegaValorVantagem(valor) {
+      this.pontuacaoVantagem = this.pontuacaoVantagem + valor;
     },
     pegaValorPunicao(valor) {
       this.pontuacaoPunicao = this.pontuacaoPunicao - valor;
@@ -29,8 +34,9 @@ export default {
   },
   data() {
     return {
-      pontuacao: 0,
+      pontuacaoVantagem: 0,
       pontuacaoPunicao: 0,
+      pontuacao: 0,
     };
   },
   components: {

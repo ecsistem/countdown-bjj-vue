@@ -2,7 +2,7 @@
   <div class="scores">
     <span>{{ quantidadePunicao }}</span>
     <span>{{ pontoVantagemRight }}</span>
-    <span>0</span>
+    <span>{{ pontos }}</span>
     <p>P</p>
     <p>V</p>
     <p>PT</p>
@@ -14,6 +14,7 @@ export default {
   props: {
     pontoVantagemRight: Number,
     quantidadePunicao: Number,
+    pontos: Number,
   },
 };
 </script>
