@@ -9,8 +9,11 @@ Abaixo o layout que desenvolvi no Figma, para poder depois desenvolver o projeto
 Feito o design, fui codar, então utilizando Vue Js para desenvolver esse projeto seguindo as normas das competições de jiu-jitsu.
 
 <h4 align="center"> 
-	🚧  Vue Project Countdown 🚀 Em construção...  🚧
+	🚧  Vue Project Countdown 🚀 Em construção...  🚧	
 </h4>
+<p>Como está ficando . . . </p>
+
+![countdown-gif](https://user-images.githubusercontent.com/26436413/110866194-23607d80-829b-11eb-8122-7929ee398bc4.gif)
 
 # Para rodar o projeto
 
