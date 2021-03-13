@@ -1,11 +1,45 @@
 <template>
   <div class="countdown">
-    <span>{{ minuteLeft }}</span>
-    <span>{{ minuteRight }}</span>
-    <span>:</span>
-    <span>{{ secondLeft }}</span>
-    <span>{{ secondRight }}</span>
-
+    <div class="countdown-times">
+      <div>
+        <p>Tempo de luta:</p>
+      </div>
+      <div>
+        <input
+          @click="editTime(5)"
+          type="radio"
+          v-model="selectedTime"
+          value="5"
+          checked
+        />
+        <label>05:00</label>
+      </div>
+      <div>
+        <input
+          @click="editTime(8)"
+          type="radio"
+          v-model="selectedTime"
+          value="8"
+        />
+        <label>08:00</label>
+      </div>
+      <div>
+        <input
+          @click="editTime(10)"
+          type="radio"
+          v-model="selectedTime"
+          value="10"
+        />
+        <label>10:00</label>
+      </div>
+    </div>
+    <div>
+      <span>{{ minuteLeft }}</span>
+      <span>{{ minuteRight }}</span>
+      <span>:</span>
+      <span>{{ secondLeft }}</span>
+      <span>{{ secondRight }}</span>
+    </div>
     <div class="countdown-button">
       <button v-on:click="startCountdown()" v-if="isActive === null">
         Iniciar
@@ -17,7 +51,8 @@
 </template>
 
 <script>
-let time = 0.2 * 60;
+let selectedTime = 5;
+let time = selectedTime * 60;
 let minute = Math.floor(time / 60);
 let seconds = time % 60;
 let isActive = null;
@@ -29,6 +64,18 @@ let idSetTime;
 
 export default {
   methods: {
+    editTime: function (valorTime) {
+      selectedTime = valorTime;
+      time = selectedTime * 60;
+      minute = Math.floor(time / 60);
+      seconds = time % 60;
+      [minuteLeft, minuteRight] = String(minute).padStart(2, "0").split("");
+      [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
+      this.minuteLeft = minuteLeft;
+      this.minuteRight = minuteRight;
+      this.secondLeft = secondLeft;
+      this.secondRight = secondRight;
+    },
     pauseCountdown: function () {
       clearInterval(idSetTime);
       this.isActive = false;
@@ -64,6 +111,7 @@ export default {
       secondLeft,
       secondRight,
       idSetTime,
+      selectedTime: 5,
     };
   },
 };
@@ -113,5 +161,19 @@ export default {
 
 .countdown-button button:hover {
   background: #4953b8;
+}
+
+.countdown-times {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.countdown-times input {
+  margin-right: 5px;
+}
+
+.countdown-times p {
+  text-align: left;
 }
 </style>
