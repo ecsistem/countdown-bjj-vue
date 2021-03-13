@@ -12,11 +12,11 @@
       </button>
     </div>
     <div class="button-reset">
-      <button>-</button>
-      <button>-</button>
-      <button>-</button>
-      <button>-</button>
-      <button>-</button>
+      <button @click="reverter(2)">-</button>
+      <button @click="reverter(3)">-</button>
+      <button @click="reverter(4)">-</button>
+      <button @click="reverter(1)">-</button>
+      <button @click="reverter(-1)">-</button>
     </div>
   </div>
 </template>
@@ -24,6 +24,9 @@
 <script>
 export default {
   methods: {
+    reverter(valor) {
+      this.$emit("reverter", valor);
+    },
     pontuar(quantidadePontos) {
       this.$emit("pontuar", quantidadePontos);
     },

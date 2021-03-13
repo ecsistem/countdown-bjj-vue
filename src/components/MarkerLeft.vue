@@ -12,6 +12,7 @@
       @pontuarVantagem="pegaValorVantagem"
       @pontuarPunicao="pegaValorPunicao"
       @pontuar="pegaValorPontos"
+      @reverter="pegaValorReverter"
     />
   </div>
 </template>
@@ -22,6 +23,17 @@ import ButtonsLeft from "./ButtonsLeft";
 
 export default {
   methods: {
+    pegaValorReverter(valor) {
+      if ((valor === 4 || valor === 3 || valor === 2) && this.pontuacao > 0) {
+        this.pontuacao = this.pontuacao - valor;
+      }
+      if (valor === 1 && this.pontuacaoVantagem > 0) {
+        this.pontuacaoVantagem = this.pontuacaoVantagem - valor;
+      }
+      if (valor === -1 && this.pontuacaoPunicao < 0) {
+        this.pontuacaoPunicao = this.pontuacaoPunicao - valor;
+      }
+    },
     pegaValorPontos(valor) {
       this.pontuacao = this.pontuacao + valor;
     },
