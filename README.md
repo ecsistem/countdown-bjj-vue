@@ -1,32 +1,38 @@
-# Countdown BJJ Vue
+<h1 align="center">Countdown BJJ Vue</h1> 
 
-Um hobbie que gosto de praticar é o Jiu-Jitsu (uma arte marcial japonesa), nas competições e até mesmo nos treinos de Jiu-Jitsu é utilizado um cronometro para medir o tempo da luta e pontuções dos competidores. Pensando nisso, empolguei em desenvolver esse countdown para estudar um pouco mais desenvolvimento.
+<p align="left">Um hobbie que gosto de praticar é o Jiu-Jitsu (uma arte marcial japonesa), nas competições e até mesmo nos treinos de Jiu-Jitsu é utilizado um cronometro para medir o tempo da luta e pontuções dos competidores. Pensando nisso, empolguei em desenvolver esse countdown para estudar um pouco mais desenvolvimento.
 Abaixo o layout que desenvolvi no Figma, para poder depois desenvolver o projeto.
+</p>
 
 ![figmaimagecountdown](https://user-images.githubusercontent.com/26436413/110834676-36138c00-8274-11eb-9bd0-8b2e42ab5698.jpg)
 [Acesse aqui o projeto no Figma](https://www.figma.com/proto/pb6Vbvyh9ZIQ9ykg1hjBfB/Countdown-JJ?node-id=0%3A3&frame-preset-name=Desktop&scaling=min-zoom)
 
 Feito o design, fui codar, então utilizando Vue Js para desenvolver esse projeto seguindo as normas das competições de jiu-jitsu.
 
-<h4 align="center"> 
-	🚧  Vue Project Countdown 🚀 Em construção...  🚧	
-</h4>
-<p>Como está ficando . . .</p>
-
-![countdown-gif](https://user-images.githubusercontent.com/26436413/110866194-23607d80-829b-11eb-8122-7929ee398bc4.gif)
-
 <p>Finalizado v1 do projeto :tada:</p>
 
-![v1countdown](https://user-images.githubusercontent.com/26436413/110982837-66742c80-833f-11eb-87a1-3e2df4fef208.gif)
+![countdownDone](https://user-images.githubusercontent.com/26436413/111039159-00e97400-8403-11eb-86db-b5c131f88f24.gif)
 
-Até o momento:
+:pushpin: O que o projeto faz:
 * Botão Iniciar startando o countdown
 * Botão Iniciar troca para Botão Pausar quando o Countdown é inciado
 * Botao Pausar volta para iniciar ao countdown zerar
+* Botao Pausar quando pressionado, pausa o countdown e aparece o botão retomar e some o mesmo.
+* Botão Retomar quando pressionado, retoma o countdown de onde parou.
 * Countdown diminuindo a cada segundo até zerar
 * Botões de Pontuação adicionando pontos ao respectivos Contadores de acordo com o seu valor que representado
+* Botões de Reverter pontuação ao lado dos botões de pontuação, removem o valor de acordo com o botão ao lado.
+* Inputs tipo Radio, altera o tempo do countdown as opções são de 5, 8 e 10 minutos.
 
-Caso queira contribuir, vou deixar aqui o link para as features restantes desse projeto: [Acessar Issues](https://github.com/thiagodau/countdown-bjj-vue/issues)
+:pencil2: Caso queira contribuir, fique a vontade, também vou deixar aqui o link para as features restantes desse projeto: [Acessar Issues](https://github.com/thiagodau/countdown-bjj-vue/issues)
+
+:mortar_board: O que tive experiência com esse projeto:
+* Componentização
+* Comunicação entre Componentes (Pais e filhos e vice-versa)
+* Props e Eventos
+* Estilização com css
+* Funções Javascript
+* Versionamento do código
 
 # Para rodar o projeto
 
